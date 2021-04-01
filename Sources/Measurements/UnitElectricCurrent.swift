@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  UnitElectricCurrent.swift
 //  
 //
 //  Created by Albertus Liberius on 2021/04/01.
@@ -16,4 +16,8 @@ extension UnitElectricCurrent: ZeroAlignedLinearDimension{
     class var picoamperes: UnitElectricCurrent{
         UnitElectricCurrent(symbol: "pA", converter: UnitConverterLinear(coefficient: 1e-9))
     }
+}
+
+func / (lhs: Voltage, rhs: ElectricResistance) -> ElectricCurrent{
+    .init(value: lhs.value(in: .volts) / rhs.value(in: .ohms), unit: .amperes)
 }
