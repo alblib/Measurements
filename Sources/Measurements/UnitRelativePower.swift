@@ -17,7 +17,7 @@ import Foundation
     static let decibels = UnitRelativePower(symbol: "dB", converter: UnitConverterLogarithm(base: 10, coefficient: 20))
 }
 
-typealias RelativePower = Measurement<UnitRelativePower>
+public typealias RelativePower = Measurement<UnitRelativePower>
 
 public protocol AmplitudeRelativeDimension: Dimension{}
 public protocol PowerRelativeDimension: Dimension{}
