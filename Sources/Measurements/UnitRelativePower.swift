@@ -11,10 +11,18 @@ import Foundation
     class open override func baseUnit() -> Self {
         UnitRelativePower.amplitudeRatio as! Self
     }
-    static let amplitudeRatio = UnitRelativePower(symbol: "by amplitude", converter: UnitConverterLinear(coefficient: 1))
-    static let powerRatio = UnitRelativePower(symbol: "by power", converter: UnitConverterPower(exponent: 2))
-    static let percents = UnitRelativePower(symbol: "%", converter: UnitConverterLinear(coefficient: 0.01))
-    static let decibels = UnitRelativePower(symbol: "dB", converter: UnitConverterLogarithm(base: 10, coefficient: 20))
+    open class var amplitudeRatio: UnitRelativePower{
+        UnitRelativePower(symbol: "by amplitude", converter: UnitConverterLinear(coefficient: 1))
+    }
+    open class var powerRatio: UnitRelativePower{
+        UnitRelativePower(symbol: "by power", converter: UnitConverterPower(exponent: 2))
+    }
+    open class var percents: UnitRelativePower{
+        UnitRelativePower(symbol: "%", converter: UnitConverterLinear(coefficient: 0.01))
+    }
+    open class var decibels: UnitRelativePower{
+        UnitRelativePower(symbol: "dB", converter: UnitConverterLogarithm(base: 10, coefficient: 20))
+    }
 }
 
 public typealias RelativePower = Measurement<UnitRelativePower>
