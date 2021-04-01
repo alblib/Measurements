@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias Temperature = Measurement<UnitTemperature>
+public typealias Temperature = Measurement<UnitTemperature>
 
 public extension Temperature{
     /** Gives the temperature multiplied by the Boltzmann constant. */
