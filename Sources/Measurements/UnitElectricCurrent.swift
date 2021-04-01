@@ -18,6 +18,6 @@ extension UnitElectricCurrent: ZeroAlignedLinearDimension{
     }
 }
 
-func / (lhs: Voltage, rhs: ElectricResistance) -> ElectricCurrent{
+public func / (lhs: Voltage, rhs: ElectricResistance) -> ElectricCurrent{
     .init(value: lhs.value(in: .volts) / rhs.value(in: .ohms), unit: .amperes)
 }

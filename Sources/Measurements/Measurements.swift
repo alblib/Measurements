@@ -6,15 +6,15 @@ internal struct Measurements {
 }
 
 /** Dimension where all units have the same fixed zero point and only magnifying factor matters. Zero point can be defined in this dimension. */
-protocol ZeroAlignedLinearDimension: Dimension{}
+public protocol ZeroAlignedLinearDimension: Dimension{}
 
-extension Measurement where UnitType: ZeroAlignedLinearDimension{
+public extension Measurement where UnitType: ZeroAlignedLinearDimension{
     static var zero: Self{
         .init(value: 0, unit: .baseUnit())
     }
 }
 
-extension Measurement where UnitType: Dimension{
+public extension Measurement where UnitType: Dimension{
     func value(in unit: UnitType) -> Double{
         converted(to: unit).value
     }
@@ -22,7 +22,7 @@ extension Measurement where UnitType: Dimension{
 
 /** Binding value with given unit from Measurement. */
 @available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
-func BindingValue<UnitType: Dimension>(_ measurement: Binding< Measurement<UnitType> >, in unit: UnitType) -> Binding<Double>{
+public func BindingValue<UnitType: Dimension>(_ measurement: Binding< Measurement<UnitType> >, in unit: UnitType) -> Binding<Double>{
     Binding<Double> { () -> Double in
         measurement.wrappedValue.value(in: unit)
     } set: { (newValue) in

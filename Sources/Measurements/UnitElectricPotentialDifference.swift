@@ -15,9 +15,9 @@ extension UnitElectricPotentialDifference: ZeroAlignedLinearDimension{
     }
 }
 
-func * (lhs: ElectricResistance, rhs: ElectricCurrent) -> Voltage{
+public func * (lhs: ElectricResistance, rhs: ElectricCurrent) -> Voltage{
     .init(value: lhs.value(in: .ohms) * rhs.value(in: .amperes), unit: .volts)
 }
-func * (rhs: ElectricCurrent, lhs: ElectricResistance) -> Voltage{
+public func * (rhs: ElectricCurrent, lhs: ElectricResistance) -> Voltage{
     .init(value: lhs.value(in: .ohms) * rhs.value(in: .amperes), unit: .volts)
 }
