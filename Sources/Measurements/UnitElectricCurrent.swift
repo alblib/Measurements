@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias ElectricCurrent = Measurement<UnitElectricCurrent>
+public typealias ElectricCurrent = Measurement<UnitElectricCurrent>
 
 extension UnitElectricCurrent: ZeroAlignedLinearDimension{
     class var nanoamperes: UnitElectricCurrent{

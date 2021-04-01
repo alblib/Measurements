@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias Voltage = Measurement<UnitElectricPotentialDifference>
+public typealias Voltage = Measurement<UnitElectricPotentialDifference>
 
 extension UnitElectricPotentialDifference: ZeroAlignedLinearDimension{
     class var nanovolts: UnitElectricPotentialDifference{

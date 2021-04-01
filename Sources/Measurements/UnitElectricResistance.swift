@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias ElectricResistance = Measurement<UnitElectricResistance>
+public typealias ElectricResistance = Measurement<UnitElectricResistance>
 
 extension UnitElectricResistance: ZeroAlignedLinearDimension{
 }
