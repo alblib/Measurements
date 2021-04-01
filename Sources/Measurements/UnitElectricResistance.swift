@@ -9,7 +9,7 @@ import Foundation
 
 public typealias ElectricResistance = Measurement<UnitElectricResistance>
 
-public extension UnitElectricResistance: ZeroAlignedLinearDimension{
+extension UnitElectricResistance: ZeroAlignedLinearDimension{
 }
 
 public extension ElectricResistance{

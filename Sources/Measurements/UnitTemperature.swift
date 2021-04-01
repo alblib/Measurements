@@ -9,7 +9,7 @@ import Foundation
 
 typealias Temperature = Measurement<UnitTemperature>
 
-extension Measurement where UnitType == UnitTemperature{
+public extension Temperature{
     /** Gives the temperature multiplied by the Boltzmann constant. */
     var convertedToEnergy: Measurement<UnitEnergy>{
         .init(value: self.converted(to: .kelvin).value * 1.38064852e-23, unit: .joules)

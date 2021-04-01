@@ -7,10 +7,10 @@
 
 import Foundation
 
-func * (lhs: Voltage, rhs: ElectricCurrent) -> Measurement<UnitPower>{
+public func * (lhs: Voltage, rhs: ElectricCurrent) -> Measurement<UnitPower>{
     .init(value: lhs.value(in: .volts) * rhs.value(in: .amperes), unit: .watts)
 }
 
-func * (rhs: ElectricCurrent, lhs: Voltage) -> Measurement<UnitPower>{
+public func * (rhs: ElectricCurrent, lhs: Voltage) -> Measurement<UnitPower>{
     .init(value: lhs.value(in: .volts) * rhs.value(in: .amperes), unit: .watts)
 }

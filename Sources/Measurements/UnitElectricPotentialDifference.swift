@@ -10,7 +10,7 @@ import Foundation
 public typealias Voltage = Measurement<UnitElectricPotentialDifference>
 
 extension UnitElectricPotentialDifference: ZeroAlignedLinearDimension{
-    class var nanovolts: UnitElectricPotentialDifference{
+    public class var nanovolts: UnitElectricPotentialDifference{
         UnitElectricPotentialDifference(symbol: "nV", converter: UnitConverterLinear(coefficient: 1e-9))
     }
 }

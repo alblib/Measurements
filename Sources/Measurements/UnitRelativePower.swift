@@ -7,8 +7,8 @@
 
 import Foundation
 
-@objc class UnitRelativePower: Dimension{
-    class override func baseUnit() -> Self {
+@objc open class UnitRelativePower: Dimension{
+    class open override func baseUnit() -> Self {
         UnitRelativePower.amplitudeRatio as! Self
     }
     static let amplitudeRatio = UnitRelativePower(symbol: "by amplitude", converter: UnitConverterLinear(coefficient: 1))
@@ -19,15 +19,15 @@ import Foundation
 
 typealias RelativePower = Measurement<UnitRelativePower>
 
-protocol AmplitudeRelativeDimension: Dimension{}
-protocol PowerRelativeDimension: Dimension{}
+public protocol AmplitudeRelativeDimension: Dimension{}
+public protocol PowerRelativeDimension: Dimension{}
 extension UnitElectricPotentialDifference: AmplitudeRelativeDimension{}
 extension UnitElectricCurrent: AmplitudeRelativeDimension{}
 extension UnitElectricResistance: AmplitudeRelativeDimension{}
 extension UnitPower: PowerRelativeDimension{}
 extension UnitEnergy: PowerRelativeDimension{}
 
-extension RelativePower{
+public extension RelativePower{
     init<RawUnitType>(_ lhs: Measurement<RawUnitType>, over rhs: Measurement<RawUnitType>) where RawUnitType: AmplitudeRelativeDimension{
         self.init(value: lhs.value / rhs.value(in: lhs.unit), unit: .amplitudeRatio)
     }

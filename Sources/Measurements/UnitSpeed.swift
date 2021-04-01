@@ -8,5 +8,7 @@
 import Foundation
 
 extension UnitSpeed: ZeroAlignedLinearDimension{
-    static let speedOfLight = UnitSpeed(symbol: "c", converter: UnitConverterLinear(coefficient: 299792458))
+    public class var speedOfLight: UnitSpeed{
+        UnitSpeed(symbol: "c", converter: UnitConverterLinear(coefficient: 299792458))
+    }
 }
