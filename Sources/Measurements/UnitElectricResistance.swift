@@ -9,7 +9,12 @@ import Foundation
 
 public typealias ElectricResistance = Measurement<UnitElectricResistance>
 
-extension UnitElectricResistance: ZeroAlignedLinearDimension{
+extension UnitElectricResistance: ZeroAlignedLinearDimension{}
+
+public extension UnitElectricResistance{
+    class var statohms: UnitElectricResistance{
+        .init(symbol: "statohm", converter: UnitConverterLinear(coefficient: pow(299792458,2) * 1e-5))
+    }
 }
 
 public extension ElectricResistance{

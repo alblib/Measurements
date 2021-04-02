@@ -1,5 +1,6 @@
 import Foundation
 import SwiftUI
+import Combine
 
 internal struct Measurements {
     var text = "Hello, World!"
