@@ -1,6 +1,7 @@
 import Foundation
+#if canImport(SwiftUI)
 import SwiftUI
-import Combine
+#endif
 
 internal struct Measurements {
     var text = "Hello, World!"
@@ -22,7 +23,7 @@ public extension Measurement where UnitType: Dimension{
 }
 
 /** Binding value with given unit from Measurement. */
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 13.0, macOS 10.15, macCatalyst 13.0, tvOS 13.0, watchOS 6.0, *)
 public func BindingValue<UnitType: Dimension>(_ measurement: Binding< Measurement<UnitType> >, in unit: UnitType) -> Binding<Double>{
     Binding<Double> { () -> Double in
         measurement.wrappedValue.value(in: unit)
