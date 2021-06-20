@@ -12,7 +12,7 @@ public typealias Temperature = Measurement<UnitTemperature>
 public extension Temperature{
     /** Gives the temperature multiplied by the Boltzmann constant. */
     var convertedToEnergy: Measurement<UnitEnergy>{
-        .init(value: self.converted(to: .kelvin).value * 1.38064852e-23, unit: .joules)
+        .init(value: self.converted(to: .kelvin).value * 1.380649e-23, unit: .joules) // now new definition defines exact.
     }
     /** Room temperature 25 degrees Celsius. */
     static var room: Measurement<UnitType>{
