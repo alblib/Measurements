@@ -6,7 +6,8 @@ final class MeasurementsTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(Measurements().text, "Hello, World!")
+        print(ElectricPotentialNoiseDensity(value: 3, unit: .nanovoltsPerSquareRootHertz) + ElectricPotentialNoiseDensity(value: 3, unit: .nanovoltsPerSquareRootHertz))
+        //XCTAssertEqual(Measurements().text, "Hello, World!")
     }
 
     static var allTests = [

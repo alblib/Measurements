@@ -8,21 +8,21 @@
 import SwiftUI
 
 public class UnitElectricPotentialNoiseDensity: Dimension, ZeroAlignedLinearDimension{
-    public class var nanoVoltsPerSquareRootHertz: UnitElectricPotentialNoiseDensity{
+    public class var nanovoltsPerSquareRootHertz: UnitElectricPotentialNoiseDensity{
         UnitElectricPotentialNoiseDensity(symbol: "nV/√Hz", converter: UnitConverterLinear(coefficient: 1))
     }
     class public override func baseUnit() -> Self {
-        Self.nanoVoltsPerSquareRootHertz as! Self
+        Self.nanovoltsPerSquareRootHertz as! Self
     }
 }
 public class UnitElectricCurrentNoiseDensity: Dimension, ZeroAlignedLinearDimension{
-    public class var picoAmperesPerSquareRootHertz: UnitElectricCurrentNoiseDensity{
+    public class var picoamperesPerSquareRootHertz: UnitElectricCurrentNoiseDensity{
         UnitElectricCurrentNoiseDensity(symbol: "pA/√Hz", converter: UnitConverterLinear(coefficient: 1))
     }
     class public override func baseUnit() -> Self {
-        Self.picoAmperesPerSquareRootHertz as! Self
+        Self.picoamperesPerSquareRootHertz as! Self
     }
-    public class var femtoAmperesPerSquareRootHertz: UnitElectricCurrentNoiseDensity{
+    public class var femtoamperesPerSquareRootHertz: UnitElectricCurrentNoiseDensity{
         UnitElectricCurrentNoiseDensity(symbol: "pA/√Hz", converter: UnitConverterLinear(coefficient: 1e-3))
     }
 }
@@ -47,12 +47,12 @@ public typealias PowerNoiseDensity = Measurement<UnitPowerNoiseDensity>
 
 public extension PowerNoiseDensity{
     init(electricPotentialNoiseDensity: ElectricPotentialNoiseDensity, impedance: ElectricResistance){
-        let vNoiseDensityValue = electricPotentialNoiseDensity.value(in: .nanoVoltsPerSquareRootHertz)
+        let vNoiseDensityValue = electricPotentialNoiseDensity.value(in: .nanovoltsPerSquareRootHertz)
         self.init(value: vNoiseDensityValue * vNoiseDensityValue / impedance.value(in: .ohms) * 1e12,
                   unit: .microwattsPerHertz)
     }
     init(electricCurrentNoiseDensity: ElectricCurrentNoiseDensity, impedance: ElectricResistance){
-        let iNoiseDensityValue = electricCurrentNoiseDensity.value(in: .picoAmperesPerSquareRootHertz)
+        let iNoiseDensityValue = electricCurrentNoiseDensity.value(in: .picoamperesPerSquareRootHertz)
         self.init(value: iNoiseDensityValue * iNoiseDensityValue * impedance.value(in: .ohms) * 1e18,
                   unit: .microwattsPerHertz)
     }
@@ -61,12 +61,12 @@ public extension PowerNoiseDensity{
 public extension ElectricPotentialNoiseDensity{
     init(powerNoiseDensity: PowerNoiseDensity, impedance: ElectricResistance){
         self.init(value: sqrt(powerNoiseDensity.value(in: .microwattsPerHertz) * impedance.value(in: .ohms)) * 1e-6,
-                  unit: .nanoVoltsPerSquareRootHertz)
+                  unit: .nanovoltsPerSquareRootHertz)
     }
 }
 public extension ElectricCurrentNoiseDensity{
     init(powerNoiseDensity: PowerNoiseDensity, impedance: ElectricResistance){
         self.init(value: sqrt(powerNoiseDensity.value(in: .microwattsPerHertz) / impedance.value(in: .ohms)) * 1e-9,
-                  unit: .picoAmperesPerSquareRootHertz)
+                  unit: .picoamperesPerSquareRootHertz)
     }
 }
