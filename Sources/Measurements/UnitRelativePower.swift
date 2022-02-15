@@ -27,8 +27,8 @@ import Foundation
 
 public typealias RelativePower = Measurement<UnitRelativePower>
 
-public protocol AmplitudeRelativeDimension: Dimension{}
-public protocol PowerRelativeDimension: Dimension{}
+public protocol AmplitudeRelativeDimension: ZeroAlignedLinearDimension{}
+public protocol PowerRelativeDimension: ZeroAlignedLinearDimension{}
 extension UnitElectricPotentialDifference: AmplitudeRelativeDimension{}
 extension UnitElectricCurrent: AmplitudeRelativeDimension{}
 extension UnitElectricResistance: AmplitudeRelativeDimension{}
