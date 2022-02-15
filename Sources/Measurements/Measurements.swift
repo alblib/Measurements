@@ -8,7 +8,7 @@ internal struct Measurements {
 }
 
 /** Dimension where all units have the same fixed zero point and only magnifying factor matters. Zero point can be defined in this dimension. */
-public protocol ZeroAlignedLinearDimension: Dimension{}
+public protocol ZeroAlignedLinearDimension: Dimension{} // DimensionOnlyLinear
 
 public extension Measurement where UnitType: ZeroAlignedLinearDimension{
     static var zero: Self{
