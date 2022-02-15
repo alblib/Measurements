@@ -14,15 +14,15 @@ public extension UnitEnergy{
         UnitEnergy(symbol: "eV", converter: UnitConverterLinear(coefficient: 1.602176634e-19))
     }
     class var kiloElectronVolts: UnitEnergy{
-        UnitEnergy(symbol: "eV", converter: UnitConverterLinear(coefficient: 1.602176634e-16))
+        UnitEnergy(symbol: "keV", converter: UnitConverterLinear(coefficient: 1.602176634e-16))
     }
     class var megaElectronVolts: UnitEnergy{
-        UnitEnergy(symbol: "eV", converter: UnitConverterLinear(coefficient: 1.602176634e-13))
+        UnitEnergy(symbol: "MeV", converter: UnitConverterLinear(coefficient: 1.602176634e-13))
     }
     class var gigaElectronVolts: UnitEnergy{
-        UnitEnergy(symbol: "eV", converter: UnitConverterLinear(coefficient: 1.602176634e-10))
+        UnitEnergy(symbol: "GeV", converter: UnitConverterLinear(coefficient: 1.602176634e-10))
     }
     class var teraElectronVolts: UnitEnergy {
-        UnitEnergy(symbol: "eV", converter: UnitConverterLinear(coefficient: 1.602176634e-7))
+        UnitEnergy(symbol: "TeV", converter: UnitConverterLinear(coefficient: 1.602176634e-7))
     }
 }
