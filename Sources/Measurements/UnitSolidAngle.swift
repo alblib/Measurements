@@ -13,10 +13,10 @@ import Foundation
     }
     open class var spats: UnitSolidAngle{ // @NSCopying
         UnitSolidAngle(symbol: "sp", converter: UnitConverterLinear(coefficient: 1))
-    }
+    }/*
     open class var spheres: UnitSolidAngle { // spat
         spats
-    }
+    }*/ // remove duplicate
     open class var steradians: UnitSolidAngle{
         UnitSolidAngle(symbol: "sr", converter: UnitConverterLinear(coefficient: 1 / (4 * Double.pi)))
     }

@@ -26,3 +26,24 @@ public extension ElectricResistance{
 public func / (lhs: Voltage, rhs: ElectricCurrent) -> ElectricResistance{
     .init(value: lhs.value(in: .volts) * rhs.value(in: .amperes), unit: .ohms)
 }
+
+@objc open class UnitElectricConductance: Dimension, ZeroAlignedLinearDimension{
+    class open override func baseUnit() -> Self {
+        UnitElectricConductance.siemens as! Self
+    }
+    open class var siemens: UnitElectricConductance{ // mhos
+        .init(symbol: "S", converter: UnitConverterLinear(coefficient: 1))
+    }
+}
+
+public typealias ElectricConductance = Measurement<UnitElectricConductance>
+public extension ElectricResistance{
+    var inverse: ElectricConductance{
+        .init(value: (1 / self.value(in: .ohms)), unit: .siemens)
+    }
+}
+public extension ElectricConductance{
+    var inverse: ElectricResistance{
+        .init(value: 1 / self.value(in: .siemens), unit: .ohms)
+    }
+}
